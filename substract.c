@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define R 1
-#define L 0
-
 typedef struct _Lambda {
 	int head;
 	char *state;
