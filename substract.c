@@ -32,7 +32,7 @@ void init_tape(unsigned char *input_tape) {
 	}
 }
 
-Lambda next(Lambda l) {
+Lambda move(Lambda l) {
 	if (strcmp(l.state, "q0") == 0 && tape[l.head] == '0') {
 		tape[l.head] = 'B';
 		l.head += 1;
@@ -77,7 +77,7 @@ void substract_tm(unsigned char *input_tape) {
 	char *q0 = "q0";
 	Lambda l = {0, q0, false};
 	while(!l.halt) {
-		l = next(l);
+		l = move(l);
 	}
 	printf("Input: %s = ", input_tape);
 	print_result();
