@@ -8,11 +8,12 @@ typedef struct _Lambda {
 	bool halt;
 } Lambda;
 
-unsigned char tape[1024];
+#define LENGTH 48
+unsigned char tape[LENGTH];
 
 void print_result() {
 	unsigned int result = 0;
-	for (int i = 0; i < strlen(tape); i++) {
+	for (int i = 0; i < LENGTH; i++) {
 		if (tape[i] == '0') {
 			result += 1;
 		}
@@ -22,7 +23,7 @@ void print_result() {
 
 void init_tape(unsigned char *input_tape) {
 	int len = strlen(input_tape);
-	for (int i = 0; i < 1024; i++) {
+	for (int i = 0; i < LENGTH; i++) {
 		if (i < len) {
 			tape[i] = input_tape[i];
 		} else {
